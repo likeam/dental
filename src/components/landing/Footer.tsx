@@ -49,7 +49,7 @@ function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#" className="hover:text-foreground">
-                  Help center
+                  Help Center
                 </a>
               </li>
               <li>
