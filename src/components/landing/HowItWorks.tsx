@@ -147,7 +147,7 @@ const HowItWorks = () => {
         <SignUpButton mode="modal">
           <Button size="lg">
             <ArrowRightIcon className="mr-2 size-5" />
-            Get started now
+            Get started
           </Button>
         </SignUpButton>
       </div>
