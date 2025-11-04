@@ -11,12 +11,12 @@ function Footer() {
             <div className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="DentWise Logo"
+                alt="DentWise Logos"
                 width={32}
                 height={32}
                 className="w-8 h-8"
               />
-              <span className="font-semibold text-lg">Dental</span>
+              <span className="font-semibold text-md">Dental</span>
             </div>
             <p className="text-sm text-muted-foreground">
               AI-powered dental assistance that actually helps.
@@ -24,7 +24,7 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-medium mb-3">Product</h4>
+            <h4 className="font-medium mb-4">Product</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#" className="hover:text-foreground">
