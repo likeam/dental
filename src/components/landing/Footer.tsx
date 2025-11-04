@@ -11,7 +11,7 @@ function Footer() {
             <div className="flex items-center gap-2">
               <Image
                 src="/logo.png"
-                alt="DentWise Logo"
+                alt="DentWise Logos"
                 width={32}
                 height={32}
                 className="w-8 h-8"
