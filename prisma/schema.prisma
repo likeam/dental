@@ -11,5 +11,77 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
+}
+
+
+model User {
+  id String @id @default(cuid())
+  clerkId String @unique
+  email String @unique
+  firstName String?
+  lastName String?
+  phone String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  appointments Appointment[]
+
+  @@map("users")
+  
+}
+
+model Doctor {
+  id String @id @default(cuid())
+  name String
+  email String @unique
+  phone String?
+  specialty String
+  bio String?
+  imageUrl String?
+  gender Gender
+  isActive Boolean @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  appointments Appointment[]
+
+  @@map("doctors")
+}
+
+model Appointment {
+  id String @id @default(cuid())
+  date DateTime
+  time String
+  dureation Int
+  notes String?  
+  reason String?
+  status AppointmentStatus @default(PENDING)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  doctorId String
+
+
+ user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ doctor Doctor @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+ 
+  appointmentDate DateTime
+
+  @@map("appointments")
+
+
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
 }
